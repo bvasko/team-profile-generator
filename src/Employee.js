@@ -9,10 +9,16 @@ getRole()—returns 'Employee'
 */
 
 class Employee {
-  constructor(name, id, email) {
-    this.role = "Employee";
+  constructor(role) {
+    this.role = role;
+  }
+  setName(name) {
     this.name = name;
+  }
+  setId(id) {
     this.id = id;
+  }
+  setEmail(email) {
     this.email = email;
   }
   getName() {

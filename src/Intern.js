@@ -6,11 +6,15 @@ getSchool()
 getRole()—overridden to return 'Intern'
  */
 class Intern extends Employee {
-  constructor(school) {
-    this.role = 'Intern';
+  constructor() {
+    super('Intern');
+  }
+  setSchool(school) {
     this.school = school;
   }
   getSchool() {
     return this.school;
   }
 }
+
+module.exports = Intern;
