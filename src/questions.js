@@ -1,5 +1,5 @@
 // Set parameter default to manager
-function questions(role = 'Manager') {
+function getQuestions(role = 'Manager') {
   const required = [
     {
       type: 'input',
@@ -58,4 +58,4 @@ function questions(role = 'Manager') {
   ];
 }
 
-module.exports = questions;
+module.exports = getQuestions;

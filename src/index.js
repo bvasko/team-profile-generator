@@ -1,8 +1,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const questions = require('./questions.js');
+const getQuestions = require('./questions.js');
 
-const defaultQuestions = questions();
+const defaultQuestions = getQuestions();
 const employees = [];
 
 function setRoleToManager(response) {
@@ -19,7 +19,7 @@ function askQuestions(questionArr) {
     }
     if (response.roleType === 'Intern' || response.roleType === 'Engineer') {
       employees.push(response);
-      const questionsByRole = questions(response.roleType);
+      const questionsByRole = getQuestions(response.roleType);
       askQuestions(questionsByRole);
     } else {
       employees.forEach(employee => console.log(employee.roleType));
