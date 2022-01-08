@@ -8,6 +8,8 @@ describe('Intern', () => {
     expect(role).toEqual(expectedRole);
   });
   it('should get and set a school', () => {
-
+    const worker = new Intern();
+    worker.setSchool('Hard knocks');
+    expect(worker.getSchool()).toEqual('Hard knocks');
   });
 });

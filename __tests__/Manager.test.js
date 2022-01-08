@@ -7,7 +7,11 @@ describe('Manager', () => {
     const expectedRole = "Manager";
     expect(role).toEqual(expectedRole);
   });
-  it('should get and set an office number', () => {
-
+  it('should set and get an office number', () => {
+    const worker = new Manager("Manager");
+    const expectedOfficeNumber = 1;
+    worker.setOfficeNumber(1);
+    const officeNumber = worker.getOfficeNumber();
+    expect(expectedOfficeNumber).toEqual(officeNumber);
   });
 });

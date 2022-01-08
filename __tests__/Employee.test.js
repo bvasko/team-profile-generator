@@ -8,16 +8,19 @@ describe('Employee', () => {
     expect(role).toEqual(expectedRole);
   });
   it('should get and set a name', () => {
-    const worker = new Employee("Employee");
+    const worker = new Employee("Employee", 1);
     const expectedName = "Bonnie";
     worker.setName("Bonnie");
     const name = worker.getName();
     expect(name).toEqual(name);
   });
-  it('should get and set an id', () => {
-
+  it('should have an id', () => {
+    const worker = new Employee("Employee", 1);
+    expect(worker.getId()).toEqual(1);
   });
   it('should get and set an email', () => {
-
+    const worker = new Employee("Employee");
+    worker.setEmail('bvasko@gmail.com');
+    expect(worker.getEmail()).toEqual('bvasko@gmail.com');
   });
 });

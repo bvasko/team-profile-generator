@@ -7,7 +7,10 @@ describe('Engineer', () => {
     const expectedRole = "Engineer";
     expect(role).toEqual(expectedRole);
   });
-  it('should get and set a github username', () => {
-    
+  it('should get the github username', () => {
+    const worker = new Engineer();
+    const username = 'bvasko';
+    worker.setGithub(username);
+    expect(worker.getGithub()).toEqual(username);
   });
 });
