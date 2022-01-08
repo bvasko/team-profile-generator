@@ -5,14 +5,17 @@ const questions = require('./questions.js');
 const defaultQuestions = questions();
 const employees = [];
 
+function setRoleToManager(response) {
+  return {...response, roleType: 'Manager'};
+}
+
 function askQuestions(questionArr) {
   inquirer
   .prompt(questionArr)
   .then((response => {
     //If this is the first time answering the questions, then set the role to manager
     if (employees.length === 0) {
-      const manager = {...response, roleType: 'Manager'};
-      employees.push(manager);
+      employees.push(setRoleToManager(response));
     }
     if (response.roleType === 'Intern' || response.roleType === 'Engineer') {
       employees.push(response);

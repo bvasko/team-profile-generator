@@ -1,12 +1,3 @@
-/**
-name
-id
-email
-getName()
-getId()
-getEmail()
-getRole()—returns 'Employee' 
-*/
 
 class Employee {
   //Set default values for parameters

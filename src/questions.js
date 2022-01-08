@@ -1,4 +1,4 @@
-// Set default to manager
+// Set parameter default to manager
 function questions(role = 'Manager') {
   const required = [
     {

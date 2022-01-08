@@ -1,10 +1,5 @@
 const Employee = require("./Employee");
-/**
- * Extends employee
-school
-getSchool()
-getRole()—overridden to return 'Intern'
- */
+
 class Intern extends Employee {
   constructor() {
     super('Intern');
