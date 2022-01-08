@@ -9,7 +9,8 @@ getRole()—returns 'Employee'
 */
 
 class Employee {
-  constructor(role, id, name) {
+  //Set default values for parameters
+  constructor(role = '--', id = '0', name = '--') {
     this.role = role;
     this.id = id;
     this.name = name;
@@ -33,4 +34,5 @@ class Employee {
     return this.role;
   }
 }
+
 module.exports = Employee;
