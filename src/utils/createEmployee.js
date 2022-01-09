@@ -11,7 +11,6 @@ const employees = {
 };
 
 function createEmployee(data) {
-  console.log('make employee', data);
   let employee;
   const {roleType, name, email} = data;
 
