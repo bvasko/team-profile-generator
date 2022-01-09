@@ -1,7 +1,7 @@
 
 class Employee {
   //Set default values for parameters
-  constructor(role = '--', id = '0', name = '--') {
+  constructor(role = '--', id = 0, name = '--') {
     this.role = role;
     this.id = id;
     this.name = name;
