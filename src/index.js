@@ -1,7 +1,6 @@
 const inquirer = require('inquirer');
 const getQuestions = require('./questions.js');
 const createEmployee = require('./utils/createEmployee.js');
-const htmlGenerator = require('./class/HtmlGenerator.js');
 const HtmlGenerator = require('./class/HtmlGenerator.js');
 
 function askQuestions(questionArr, role) {
