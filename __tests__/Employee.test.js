@@ -1,4 +1,4 @@
-const Employee = require('../src/Employee');
+const Employee = require('../src/class/Employee');
 
 describe('Employee', () => {
   it('should return a role when instantiated', () => {

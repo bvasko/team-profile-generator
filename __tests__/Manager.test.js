@@ -1,4 +1,4 @@
-const Manager = require('../src/Manager');
+const Manager = require('../src/class/Manager');
 
 describe('Manager', () => {
   it('should have a role of Manager', () => {

@@ -1,4 +1,4 @@
-const Intern = require('../src/Intern');
+const Intern = require('../src/class/Intern');
 
 describe('Intern', () => {
   it('should return a role of Intern', () => {

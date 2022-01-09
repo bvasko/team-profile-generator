@@ -9,8 +9,7 @@ describe('questions', () => {
       name: 'officeNumber',
       default: '0'
     }];
-    console.log(allQuestions);
-    expect(allQuestions.length).toEqual(4);
+    expect(allQuestions.length).toEqual(5);
     expect(allQuestions).toEqual(expect.arrayContaining(managerQuestions));
   });
 });

@@ -1,4 +1,4 @@
-const Engineer = require('../src/Engineer');
+const Engineer = require('../src/class/Engineer');
 
 describe('Engineer', () => {
   it('should have a role of Engineer', () => {
