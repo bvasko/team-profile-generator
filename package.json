@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/bvasko/team-profile-generator#readme",
   "dependencies": {
-    "inquirer": "^8.2.0"
+    "inquirer": "^8.2.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "jest": "^27.4.7"

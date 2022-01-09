@@ -2,27 +2,26 @@ const Employee = require('../src/class/Employee');
 
 describe('Employee', () => {
   it('should return a role when instantiated', () => {
-    const worker = new Employee("Employee", 1, "Bonnie Dipasquale");
+    const worker = new Employee("Employee", "Bonnie Dipasquale");
     const role = worker.getRole();
     const expectedRole = "Employee";
     expect(role).toEqual(expectedRole);
   });
-  it('should get and set a name', () => {
-    const worker = new Employee("Employee", 1);
+  it('should return a name', () => {
+    const worker = new Employee("Employee", "Bonnie");
     const expectedName = "Bonnie";
-    worker.setName("Bonnie");
     const name = worker.getName();
-    expect(name).toEqual(name);
+    expect(expectedName).toEqual(name);
   });
   it('should have an id', () => {
-    const worker = new Employee("Employee", 1, "Bonnie Dipasquale");
-    expect(worker.getId()).toEqual(1);
+    const worker = new Employee("Employee", "Bonnie Dipasquale");
+    expect(worker.getId()).not.toBe('');
   });
   it('should have default values if no arguments are passed', () => {
     const worker = new Employee();
-    expect(worker.getId()).toEqual(0);
+    expect(worker.name).toEqual('--');
   });
-  it('should get and set an email', () => {
+  it('should return an email', () => {
     const worker = new Employee("Employee");
     worker.setEmail('bvasko@gmail.com');
     expect(worker.getEmail()).toEqual('bvasko@gmail.com');

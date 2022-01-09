@@ -3,23 +3,12 @@ const Manager = require('../class/Manager.js');
 const Engineer = require('../class/Engineer.js');
 const Intern = require('../class/Intern.js');
 
-/**
- * 
- * Check if the team json file is empty
- * If it is make the employee a manager
- */
-
 //This can't live here
 const employees = {
   Manager: [],
   Engineer: [],
   Intern: []
 };
-
-function isEmpty() {
-  return employees.manager.length === 0;
-}
-
 
 function createEmployee(data) {
   console.log('make employee', data);
