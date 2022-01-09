@@ -19,12 +19,12 @@
           <div class="panel-heading">
             <h1 class="panel-title">{{ name }}</h1>
             <h2 class="panel-title">
-              <img class="icon" src="../img/glasses-solid.svg" />Engineer</h2>
+              <img class="icon" src="{{ roleIcon }}" />{{ role }}</h2>
           </div>
           <div class="panel-body">
-            <div>Id: {{ id }}</div>
-            <div>Email: {{ email }}</div>
-            <div>GitHub: bvasko</div>
+            <div>{{ id }}</div>
+            <div>{{ email }}</div>
+            <div>{{ otherInfo }}</div>
           </div>
         </div>
       </div>

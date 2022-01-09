@@ -3,12 +3,6 @@ function getQuestions(role = 'Manager') {
   const required = [
     {
       type: 'input',
-      message: `What is your ${role.toLowerCase()}'s id?`,
-      name: 'id',
-      default: '1'
-    },
-    {
-      type: 'input',
       message: `What is your ${role.toLowerCase()}'s name?`,
       name: 'name',
       default: 'Bonnie'
@@ -53,7 +47,7 @@ function getQuestions(role = 'Manager') {
       type: 'list',
       message: 'What kind of employee would you like to create?',
       choices: ['Engineer', 'Intern', 'I don\'t want to add any more team members'],
-      name: 'roleType'
+      name: 'nextRoleType'
     }
   ];
 }

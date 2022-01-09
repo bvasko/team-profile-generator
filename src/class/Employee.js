@@ -1,9 +1,10 @@
+const { v4: uuidv4 } = require('uuid');
 
 class Employee {
   //Set default values for parameters
-  constructor(role = '--', id = 0, name = '--') {
+  constructor(role = '--', name = '--') {
     this.role = role;
-    this.id = id;
+    this.id = uuidv4();
     this.name = name;
   }
   setName(name) {

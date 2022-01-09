@@ -1,33 +1,31 @@
 const inquirer = require('inquirer');
-const fs = require('fs');
 const getQuestions = require('./questions.js');
+const createEmployee = require('./utils/createEmployee.js');
 
 const defaultQuestions = getQuestions();
-const employees = [];
+let role = null;
 
-function setRoleToManager(response) {
-  return {...response, roleType: 'Manager'};
-}
 
 function askQuestions(questionArr) {
   inquirer
   .prompt(questionArr)
   .then((response => {
-    //If this is the first time answering the questions, then set the role to manager
-    if (employees.length === 0) {
-      employees.push(setRoleToManager(response));
-    }
-    if (response.roleType === 'Intern' || response.roleType === 'Engineer') {
-      employees.push(response);
-      const questionsByRole = getQuestions(response.roleType);
+    const data = createEmployee({...response, roleType: role});
+    const [employee, employees] = data;
+    if (response.nextRoleType === 'Intern' || response.nextRoleType === 'Engineer') {
+      role = response.nextRoleType;
+      const questionsByRole = getQuestions(response.nextRoleType);
       askQuestions(questionsByRole);
     } else {
-      employees.forEach(employee => console.log(employee.roleType));
+      role = undefined;
       console.log('Generating Page...');
     }
   }));
 }
 
+
+// Set initial role to manager
+role = 'Manager';
 
 // Start asking questions
 askQuestions(defaultQuestions);
