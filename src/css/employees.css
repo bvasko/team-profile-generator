@@ -21,3 +21,13 @@ img.icon {
   max-width: 30px;
   margin-right: 8px;
 }
+
+.header {
+  width: 100%;
+  background-color: rgb(209, 43, 126);
+  margin: auto;
+  padding: 32px 0;
+  text-align: center;
+  color: white;
+  margin-bottom: 32px;
+}

@@ -17,6 +17,17 @@ describe('Employee', () => {
     const worker = new Employee("Employee", "Bonnie Dipasquale");
     expect(worker.getId()).not.toBe('');
   });
+  it('should have a read-only id', () => {
+    /* 
+    not quite read-only but that's because 
+    js classes can still have a public id property added 
+    when it has a private id already in place
+    */
+    const worker = new Employee("Employee", "Bonnie Dipasquale");
+    const id = worker.getId();
+    worker.id = 5;
+    expect(id).not.toBe(5);
+  });
   it('should have default values if no arguments are passed', () => {
     const worker = new Employee();
     expect(worker.name).toEqual('--');

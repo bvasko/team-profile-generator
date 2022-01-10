@@ -1,4 +1,3 @@
-const fs = require('fs');
 const Manager = require('../class/Manager.js');
 const Engineer = require('../class/Engineer.js');
 const Intern = require('../class/Intern.js');
@@ -12,6 +11,7 @@ const employees = {
 
 function createEmployee(data) {
   let employee;
+  console.log('e:', data);
   const {roleType, name, email} = data;
 
   switch(data.roleType) {

@@ -27,11 +27,17 @@ intern.setSchool('Penn LPS');
 describe('HtmlGenerator', () => {
   it('should have team data', () => {
     const htmlGen = new HtmlGenerator(mock);
-    console.log('data ', htmlGen.data.Manager)
-
+    console.log('data ', htmlGen.data.Manager[0])
   });
   it('should have title tags', () => {
-
+    const htmlGen = new HtmlGenerator(mock);
+    const htmlStart = htmlGen.getPageHead();
+    expect(htmlStart).toContain('<title>');
+  });
+  it('should have a body tag', () => {
+    const htmlGen = new HtmlGenerator(mock);
+    const htmlStart = htmlGen.getPageHead();
+    expect(htmlStart).toContain('<body>');
   });
   it('should have a banner with text', () => {
 
@@ -40,14 +46,21 @@ describe('HtmlGenerator', () => {
 
   });
   describe('Employee Profile Card', () => {
-    it('should show a coffee cup icon for the manager', () => {
-
+    it('should return a coffee cup icon for the manager', () => {
+      const htmlGen = new HtmlGenerator(mock);
+      const icon = htmlGen.getIcon('manager');
+      expect(icon).toEqual('mug-hot-solid.svg');
     });
-    it('should show an eyeglass icon for an engineer', () => {
-  
+    it('should return an eyeglass icon for an engineer', () => {
+      const htmlGen = new HtmlGenerator(mock);
+      const icon = htmlGen.getIcon('engineer');
+      expect(icon).toEqual('glasses-solid.svg');
+      
     });
-    it('should show a student icon for an intern', () => {
-  
+    it('should return a student icon for an intern', () => {
+      const htmlGen = new HtmlGenerator(mock);
+      const icon = htmlGen.getIcon('intern');
+      expect(icon).toEqual('user-graduate-solid.svg');
     });
   })
 
