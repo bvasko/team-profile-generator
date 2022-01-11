@@ -1,0 +1,33 @@
+.panel-primary > .panel-heading {
+  background-image: -o-linear-gradient(top,#0077F7 0,#0077F7 100%);
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#0077F7),to(#0077F7));
+  background-image: linear-gradient(to bottom,#0077F7 0,#0077F7 100%);
+  background-color: #0077F7;
+}
+
+h1.panel-title {
+  font-size: 3rem;
+}
+
+h2.panel-title {
+  margin-top: 12px;
+  font-size: 2.5rem;
+}
+
+img.icon {
+  fill: #FFF;
+  float: left;
+  width: 30px;
+  max-width: 30px;
+  margin-right: 8px;
+}
+
+.header {
+  width: 100%;
+  background-color: rgb(209, 43, 126);
+  margin: auto;
+  padding: 32px 0;
+  text-align: center;
+  color: white;
+  margin-bottom: 32px;
+}

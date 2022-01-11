@@ -17,6 +17,10 @@ describe('Employee', () => {
     const worker = new Employee("Employee", "Bonnie Dipasquale");
     expect(worker.getId()).not.toBe('');
   });
+  it('should have an employee id', () => {
+    const worker = new Employee("Employee", "Bonnie Dipasquale", 3);
+    expect(worker.getEmployeeId()).toBe(3);
+  });
   it('should have a read-only id', () => {
     /* 
     not quite read-only but that's because 

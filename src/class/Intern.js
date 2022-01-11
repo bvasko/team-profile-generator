@@ -10,6 +10,12 @@ class Intern extends Employee {
   getSchool() {
     return this.school;
   }
+  getOther() {
+    return {
+      label: 'school',
+      value: this.getSchool()
+    }
+  }
 }
 
 module.exports = Intern;

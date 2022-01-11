@@ -3,13 +3,19 @@ function getQuestions(role = 'Manager') {
   const required = [
     {
       type: 'input',
-      message: `What is your ${role.toLowerCase()}'s name?`,
+      message: `What is the ${role.toLowerCase()}'s name?`,
       name: 'name',
       default: 'Bonnie'
     },
     {
       type: 'input',
-      message: `What is your ${role.toLowerCase()}'s email?`,
+      message: `What is the ${role.toLowerCase()}'s email?`,
+      name: 'email',
+      default: 'bvasko@gmail.com'
+    },
+    {
+      type: 'input',
+      message: `What is the ${role.toLowerCase()}'s employee ID?`,
       name: 'email',
       default: 'bvasko@gmail.com'
     }

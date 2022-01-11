@@ -2,7 +2,6 @@ const Manager = require('../class/Manager.js');
 const Engineer = require('../class/Engineer.js');
 const Intern = require('../class/Intern.js');
 
-//This can't live here
 const employees = {
   Manager: [],
   Engineer: [],
@@ -11,21 +10,22 @@ const employees = {
 
 function createEmployee(data) {
   let employee;
-  console.log('e:', data);
-  const {roleType, name, email} = data;
+  const {roleType, name, email, employeeId} = data;
 
   switch(data.roleType) {
     case('Manager'):
-      employee = new Manager(name);
+      employee = new Manager(name, employeeId);
       employee.setEmail(email);
       employee.setOfficeNumber(data.officeNumber);
       break;
     case('Intern'):
-      employee = new Intern(name);
+      employee = new Intern(name, employeeId);
+      employee.setEmail(email);
       employee.setSchool(data.school);
       break;
     case('Engineer'):
-      employee = new Engineer(name);
+      employee = new Engineer(name, employeeId);
+      employee.setEmail(email);
       employee.setGithub(data.github);
       break;
   }

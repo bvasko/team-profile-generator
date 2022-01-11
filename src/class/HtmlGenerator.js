@@ -2,7 +2,6 @@ const fs = require('fs');
 
 class HtmlGenerator {
   constructor(teamData = {}) {
-    //console.log('gen data ', teamData);
     this.data = teamData;
     this.html;
   }
@@ -25,7 +24,7 @@ class HtmlGenerator {
       <meta name="description" content="" />
       <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/employees.css">
+    <link rel="stylesheet" href="./css/employees.css">
     <!-- Optional theme -->
     
     </head>
@@ -47,23 +46,45 @@ class HtmlGenerator {
     </div>`;
   }
 
-  getEmployeeCard(role) {
-    const icon = getIcon(role);
-    return ``;
+  getEmployeeCard(member) {
+    const {role, email, id, name} = member;
+    const icon = this.getIcon(role);
+    const other = member.getOther();
+    return `<div class="col-md-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h1 class="panel-title">${name}</h1>
+          <h2 class="panel-title">
+            <img class="icon" src="./img/${icon}" />${role}</h2>
+          </div>
+          <div class="panel-body">
+            <div class="info-row">Id: ${id}</div>
+            <div class="info-row">Email: ${email}</div>
+            <div class="info-row">${other.label}: ${other.value} </div>
+          </div>
+        </div>
+      </div>`;
   }
 
   getEmployeeCards() {
-    this.teamData.map(member => {
-      console.log(typeof member);
-    });
+    let html = '<div class="container"><div class="row">';
+    for (const prop in this.data) {
+      const employeesByType = this.data[prop];
+      if (employeesByType.length === 0) return;
+      employeesByType.map(member => {
+        console.log('member data', member);
+        html = html + this.getEmployeeCard(member);
+      });
+    }
+    return html + '</div></div>';
   }
 
   createPage() {
     const parts = [
       this.getPageHead(),
       this.getTitleBanner(),
-      this.getPageClose(),
-      this.getEmployeeCards()
+      this.getEmployeeCards(),
+      this.getPageClose()
     ]
     parts.join('');
     fs.writeFile('./dist/test.html',  parts.join(''), (err) => {

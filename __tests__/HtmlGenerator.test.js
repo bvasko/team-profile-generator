@@ -27,7 +27,6 @@ intern.setSchool('Penn LPS');
 describe('HtmlGenerator', () => {
   it('should have team data', () => {
     const htmlGen = new HtmlGenerator(mock);
-    console.log('data ', htmlGen.data.Manager[0])
   });
   it('should have title tags', () => {
     const htmlGen = new HtmlGenerator(mock);
@@ -43,7 +42,8 @@ describe('HtmlGenerator', () => {
 
   });
   it('should render the correct number of employee cards', () => {
-
+    const htmlGen = new HtmlGenerator(mock);
+    const cards = htmlGen.getEmployeeCards();
   });
   describe('Employee Profile Card', () => {
     it('should return a coffee cup icon for the manager', () => {
@@ -55,7 +55,6 @@ describe('HtmlGenerator', () => {
       const htmlGen = new HtmlGenerator(mock);
       const icon = htmlGen.getIcon('engineer');
       expect(icon).toEqual('glasses-solid.svg');
-      
     });
     it('should return a student icon for an intern', () => {
       const htmlGen = new HtmlGenerator(mock);
@@ -63,6 +62,4 @@ describe('HtmlGenerator', () => {
       expect(icon).toEqual('user-graduate-solid.svg');
     });
   })
-
- 
 });
