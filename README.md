@@ -1,6 +1,8 @@
 # Team Profile Generator
 
-### generate a HTML page of employees from data collected via a node cli
+### generate a HTML page of employees from data collected via a node CLI
+
+![screenshot](./src/img/screenshot.png)
 
 ## Table of Contents
   - [Usage](#usage)
