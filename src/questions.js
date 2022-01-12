@@ -16,8 +16,8 @@ function getQuestions(role = 'Manager') {
     {
       type: 'input',
       message: `What is the ${role.toLowerCase()}'s employee ID?`,
-      name: 'email',
-      default: 'bvasko@gmail.com'
+      name: 'employeeId',
+      default: '0'
     }
   ];
   const roleSpecific = {

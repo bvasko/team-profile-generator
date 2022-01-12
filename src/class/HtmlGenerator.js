@@ -18,7 +18,7 @@ class HtmlGenerator {
     return `<!doctype html>
     <html lang="en">
     <head>
-      <title>Hello, world!</title>
+      <title>Our Team</title>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width,initial-scale=1" />
       <meta name="description" content="" />
@@ -41,13 +41,14 @@ class HtmlGenerator {
     return `  
     <div class="row header">
       <div class="col-md-12">
-        <h1>My Team</h1>
+        <h1>Meet the Team</h1>
       </div>
     </div>`;
   }
 
   getEmployeeCard(member) {
-    const {role, email, id, name} = member;
+    const {role, email, name} = member;
+    const id = member.getEmployeeId();
     const icon = this.getIcon(role);
     const other = member.getOther();
     return `<div class="col-md-4">
@@ -70,11 +71,12 @@ class HtmlGenerator {
     let html = '<div class="container"><div class="row">';
     for (const prop in this.data) {
       const employeesByType = this.data[prop];
-      if (employeesByType.length === 0) return;
-      employeesByType.forEach(member => {
-        // console.log('member data', member);
-        html = html + this.getEmployeeCard(member);
-      });
+      if (employeesByType.length !== 0) {
+        employeesByType.forEach(member => {
+          // console.log('member data', member);
+          html = html + this.getEmployeeCard(member);
+        });
+      }
     }
     return html + '</div></div>';
   }
@@ -87,7 +89,7 @@ class HtmlGenerator {
       this.getPageClose()
     ]
     parts.join('');
-    fs.writeFile('./dist/test.html',  parts.join(''), (err) => {
+    fs.writeFile('./dist/team.html',  parts.join(''), (err) => {
       if (err) console.log(err);
     });
     console.log("File done");

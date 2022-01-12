@@ -1,8 +1,8 @@
 const Employee = require("./Employee");
 
 class Manager extends Employee {
-  constructor(id, name) {
-    super('Manager', id, name);
+  constructor(name, id) {
+    super('Manager', name, id);
   }
   setOfficeNumber(officeNumber) {
     this.officeNumber = officeNumber;
@@ -12,7 +12,7 @@ class Manager extends Employee {
   }
   getOther() {
     return {
-      label: 'office number',
+      label: 'Office number',
       value: this.getOfficeNumber()
     }
   }

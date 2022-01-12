@@ -1,8 +1,8 @@
 const Employee = require("./Employee");
 
 class Engineer extends Employee {
-  constructor(name) {
-    super('Engineer', name);
+  constructor(name, employeeId) {
+    super('Engineer', name, employeeId);
   }
   setGithub(username) {
     this.github = username;
@@ -12,7 +12,7 @@ class Engineer extends Employee {
   }
   getOther() {
     return {
-      label: 'github',
+      label: 'Github',
       value: this.getGithub()
     }
   }

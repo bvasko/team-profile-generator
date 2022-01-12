@@ -57,7 +57,7 @@ describe('HtmlGenerator', () => {
   it('should create the page', () => {
     const htmlGen = new HtmlGenerator(mock);
     const success = htmlGen.createPage();
-    expect(resp).toEqual("Success");
+    expect(success).toEqual("Success");
     
   });
   describe('Employee Profile Card', () => {
