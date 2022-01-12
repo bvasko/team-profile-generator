@@ -10,7 +10,9 @@
     
 
 # Usage
-run ```node index.js``` from the src directory
+run ```npm run team``` from the project root
+
+View full demo: team-profile-generator.mp4
 
 # Credits
 Utilizes the inquirer package
