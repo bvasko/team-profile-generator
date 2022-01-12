@@ -8,7 +8,7 @@
   },
   "scripts": {
     "team": "node src/index.js",
-    "test": "jest --watch --coverage true"
+    "test": "jest --coverage true"
   },
   "repository": {
     "type": "git",

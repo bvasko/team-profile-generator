@@ -1,4 +1,7 @@
-const questions = require('../src/utils/createEmployee.js');
+const Manager = require('../src/class/Manager.js');
+const Engineer = require('../src/class/Engineer.js');
+const Intern = require('../src/class/Intern.js');
+const createEmployee = require('../src/utils/createEmployee.js');
 
 describe('createEmployee', () => {
   it('should create a manager when the role is manager', () => {
@@ -9,6 +12,9 @@ describe('createEmployee', () => {
       nextRoleType: 'Engineer',
       roleType: 'Manager'
     };
+    const employees = createEmployee(data);
+    const mgr = employees[1]['Manager'][0];
+    expect(mgr instanceof Manager).toEqual(true);
   });
   it('should create an intern when the role is intern', () => {
     const data = {
@@ -18,6 +24,9 @@ describe('createEmployee', () => {
       nextRoleType: "I don't want to add any more team members",
       roleType: 'Intern'
     };
+    const employees = createEmployee(data);
+    const intern = employees[1]['Intern'][0];
+    expect(intern instanceof Intern).toEqual(true);
   });
 
   it('should create an engineer when the role is engineer', () => {
@@ -28,5 +37,8 @@ describe('createEmployee', () => {
       nextRoleType: 'Engineer',
       roleType: 'Engineer'
     };
+    const employees = createEmployee(data);
+    const engineer = employees[1]['Engineer'][0];
+    expect(engineer instanceof Engineer).toEqual(true);
   });
 });

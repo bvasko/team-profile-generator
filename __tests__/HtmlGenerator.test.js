@@ -39,11 +39,26 @@ describe('HtmlGenerator', () => {
     expect(htmlStart).toContain('<body>');
   });
   it('should have a banner with text', () => {
-
-  });
-  it('should render the correct number of employee cards', () => {
     const htmlGen = new HtmlGenerator(mock);
-    const cards = htmlGen.getEmployeeCards();
+    const htmlStart = htmlGen.getTitleBanner();
+    expect(htmlStart).toContain('<h1>');
+  });
+  it('should render the employee cards', () => {
+    const htmlGen = new HtmlGenerator(mock);
+    const spy = jest.spyOn(htmlGen, 'getEmployeeCard');
+    htmlGen.getEmployeeCards();
+    expect(spy).toHaveBeenCalled();
+  });
+  it('should have a page closing tag', () => {
+    const htmlGen = new HtmlGenerator(mock);
+    const closing = htmlGen.getPageClose();
+    expect(closing).toContain('</body>');
+  });
+  it('should create the page', () => {
+    const htmlGen = new HtmlGenerator(mock);
+    const success = htmlGen.createPage();
+    expect(resp).toEqual("Success");
+    
   });
   describe('Employee Profile Card', () => {
     it('should return a coffee cup icon for the manager', () => {

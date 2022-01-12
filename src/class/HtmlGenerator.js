@@ -71,8 +71,8 @@ class HtmlGenerator {
     for (const prop in this.data) {
       const employeesByType = this.data[prop];
       if (employeesByType.length === 0) return;
-      employeesByType.map(member => {
-        console.log('member data', member);
+      employeesByType.forEach(member => {
+        // console.log('member data', member);
         html = html + this.getEmployeeCard(member);
       });
     }
@@ -89,9 +89,9 @@ class HtmlGenerator {
     parts.join('');
     fs.writeFile('./dist/test.html',  parts.join(''), (err) => {
       if (err) console.log(err);
-      console.log("File done")
     });
-    // return parts.join('');
+    console.log("File done");
+    return "Success";
   }
 }
 
